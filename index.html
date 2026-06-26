@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTG Balance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PTG Balance</h1>
+            <div id="balance-container">
+                <span class="label">Saldo Atual</span>
+                <div id="balance">R$ 0,00</div>
+            </div>
+        </header>
+
+        <main>
+            <section class="action-section">
+                <h2>Ganhos (Créditos)</h2>
+                <div class="input-group">
+                    <input type="number" id="credit-input" placeholder="Valor manual" step="0.01">
+                    <button id="add-credit-btn" class="btn-main credit">Adicionar</button>
+                </div>
+                <div class="grid shortcuts credit-grid">
+                    <button class="shortcut credit" data-value="5"><span>Comum</span><strong>+ R$ 5</strong></button>
+                    <button class="shortcut credit" data-value="15"><span>Incomum</span><strong>+ R$ 15</strong></button>
+                    <button class="shortcut credit" data-value="20"><span>Raro</span><strong>+ R$ 20</strong></button>
+                    <button class="shortcut credit" data-value="50"><span>Mítico</span><strong>+ R$ 50</strong></button>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="action-section">
+                <h2>Gastos (Despesas)</h2>
+                <div class="input-group">
+                    <input type="number" id="debit-input" placeholder="Valor manual" step="0.01">
+                    <button id="add-debit-btn" class="btn-main debit">Deduzir</button>
+                </div>
+                <div class="grid shortcuts debit-grid">
+                    <button class="shortcut debit" data-value="2"><span>Carta</span><strong>- R$ 2</strong></button>
+                    <button class="shortcut debit" data-value="25"><span>Play Booster</span><strong>- R$ 25</strong></button>
+                    <button class="shortcut debit" data-value="225"><span>Bundle</span><strong>- R$ 225</strong></button>
+                    <button class="shortcut debit" data-value="250"><span>Precon</span><strong>- R$ 250</strong></button>
+                    <button class="shortcut debit" data-value="900"><span>Booster Box</span><strong>- R$ 900</strong></button>
+                </div>
+            </section>
+        </main>
+
+        <div id="notification" class="hidden">Saldo Negativo!</div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>

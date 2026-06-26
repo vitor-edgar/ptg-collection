@@ -1,0 +1,183 @@
+:root {
+    --primary: #2c3e50;
+    --credit: #27ae60;
+    --credit-hover: #219150;
+    --debit: #c0392b;
+    --debit-hover: #a93226;
+    --bg: #f4f7f6;
+    --text: #333;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+#balance-container {
+    background: var(--primary);
+    color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+#balance {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.negative #balance {
+    color: #ff7675;
+}
+
+h2 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.action-section {
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="number"] {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.btn-main {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-main.credit { background-color: var(--credit); }
+.btn-main.credit:hover { background-color: var(--credit-hover); }
+
+.btn-main.debit { background-color: var(--debit); }
+.btn-main.debit:hover { background-color: var(--debit-hover); }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.shortcut {
+    padding: 15px 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.1s, opacity 0.2s;
+    background: #f8f9fa;
+    border: 1px solid #eee;
+}
+
+.shortcut:active {
+    transform: scale(0.95);
+}
+
+.shortcut span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    opacity: 0.7;
+}
+
+.shortcut strong {
+    font-size: 1.1rem;
+}
+
+.shortcut.credit { color: var(--credit); border-color: rgba(39, 174, 96, 0.2); }
+.shortcut.credit:hover { background: rgba(39, 174, 96, 0.05); }
+
+.shortcut.debit { color: var(--debit); border-color: rgba(192, 57, 43, 0.2); }
+.shortcut.debit:hover { background: rgba(192, 57, 43, 0.05); }
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 30px 0;
+}
+
+#notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--debit);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: opacity 0.3s;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+@media (max-width: 360px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
