@@ -2,6 +2,17 @@
 let balance = parseFloat(localStorage.getItem('ptg_balance')) || 0;
 let transactions = JSON.parse(localStorage.getItem('ptg_transactions')) || [];
 
+// Migrate existing transactions to have IDs if they don't
+let migrated = false;
+transactions = transactions.map((t, i) => {
+    if (!t.id) {
+        t.id = Date.now() - i;
+        migrated = true;
+    }
+    return t;
+});
+if (migrated) localStorage.setItem('ptg_transactions', JSON.stringify(transactions));
+
 // Pending transaction for modal
 let pendingAmount = 0;
 
@@ -60,19 +71,23 @@ function updateHistoryUI() {
                 <span class="history-name">${t.name}</span>
                 <span class="history-date">${t.date}</span>
             </div>
-            <span class="history-amount ${t.type}">
-                ${t.type === 'credit' ? '+' : '-'} ${new Intl.NumberFormat('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL'
-                }).format(t.amount)}
-            </span>
+            <div class="history-right">
+                <span class="history-amount ${t.type}">
+                    ${t.type === 'credit' ? '+' : '-'} ${new Intl.NumberFormat('pt-BR', {
+                        style: 'currency',
+                        currency: 'BRL'
+                    }).format(t.amount)}
+                </span>
+                <button class="delete-btn" data-id="${t.id}" title="Excluir">×</button>
+            </div>
         </div>
     `).join('');
 }
 
 function recordTransaction(type, amount, name) {
     const date = new Date().toLocaleString('pt-BR');
-    transactions.push({ type, amount, name, date });
+    const id = Date.now();
+    transactions.push({ id, type, amount, name, date });
     
     if (type === 'credit') {
         balance += amount;
@@ -95,6 +110,22 @@ function openActivityModal(amount, defaultName = '') {
 function closeActivityModal() {
     activityModal.classList.add('hidden');
     pendingAmount = 0;
+}
+
+function deleteTransaction(id) {
+    const index = transactions.findIndex(t => t.id == id);
+    if (index !== -1) {
+        const t = transactions[index];
+        if (t.type === 'credit') {
+            balance -= t.amount;
+        } else {
+            balance += t.amount;
+        }
+        transactions.splice(index, 1);
+        localStorage.setItem('ptg_transactions', JSON.stringify(transactions));
+        updateUI();
+        updateHistoryUI();
+    }
 }
 
 // Event Listeners
@@ -161,4 +192,14 @@ creditInput.addEventListener('keypress', (e) => {
 
 debitInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') addDebitBtn.click();
+});
+
+// History Item Deletion
+historyList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('delete-btn')) {
+        const id = e.target.dataset.id;
+        if (confirm('Deseja excluir esta transação?')) {
+            deleteTransaction(id);
+        }
+    }
 });

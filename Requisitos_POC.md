@@ -24,6 +24,7 @@ Criar uma ferramenta minimalista e rápida para que o usuário possa registrar c
 
 ### RF04 – Histórico de Transações (NOVO)
 *   O sistema deve possuir uma aba dedicada para exibir todas as operações (créditos e débitos) realizadas, com data, nome e valor.
+*   **Exclusão de Operações:** O usuário deve ser capaz de excluir uma transação do histórico, o que deve reverter automaticamente o impacto no saldo total.
 
 ### RF05 – Navegação
 *   Interface com abas para alternar entre "Saldo" e "Histórico".
