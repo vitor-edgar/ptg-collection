@@ -17,7 +17,7 @@
             <nav class="tabs">
                 <button class="tab-btn active" data-target="tracker-view">Saldo</button>
                 <button class="tab-btn" data-target="history-view">Histórico</button>
-                <button class="tab-btn" data-target="regulations-view">Regras</button>
+                <button class="tab-btn" data-target="regulations-view">Regulamento</button>
                 <button class="tab-btn" data-target="deck-guide-view">Montar Deck</button>
             </nav>
         </header>
@@ -95,23 +95,43 @@
                     <p><strong>Art. 5º</strong> – Cartas de valor superior somente poderão ser impressas caso tenham sido abertas em produtos, compradas ou obtidas através de troca.</p>
 
                     <h3>Capítulo III: Produtos</h3>
-                    <p><strong>Art. 6º</strong> – Tabela de Preços e Conteúdo:</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Produto</th>
-                                <th>Valor</th>
-                                <th>Conteúdo</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Carta Aleatória</td><td>R$ 2,00</td><td>1 carta</td></tr>
-                            <tr><td>Play Booster</td><td>R$ 25,00</td><td>14 cartas</td></tr>
-                            <tr><td>Bundle</td><td>R$ 225,00</td><td>126 cartas</td></tr>
-                            <tr><td>Commander Precon</td><td>R$ 250,00</td><td>100 cartas</td></tr>
-                            <tr><td>Booster Box</td><td>R$ 900,00</td><td>504 cartas</td></tr>
-                        </tbody>
-                    </table>
+                    <p><strong>Art. 6º</strong> – Conteúdo Detalhado dos Produtos:</p>
+                    <ul>
+                        <li><strong>Carta Aleatória (R$ 2,00):</strong> Uma carta aleatória qualquer, podendo ser filtrada por identidade do comandante.</li>
+                        <li><strong>Play Booster (R$ 25,00):</strong> Contém 14 cartas com a seguinte estrutura:
+                            <ol>
+                                <li>Comum</li>
+                                <li>Comum</li>
+                                <li>Comum</li>
+                                <li>Comum</li>
+                                <li>Comum</li>
+                                <li>Comum</li>
+                                <li>Comum (ou carta da "The List")</li>
+                                <li>Incomum</li>
+                                <li>Incomum</li>
+                                <li>Incomum</li>
+                                <li>Wildcard (Qualquer raridade: Comum a Mítica)</li>
+                                <li>Rara ou Mítica do set</li>
+                                <li>Foil Tradicional (Qualquer raridade)</li>
+                                <li>Terreno Básico</li>
+                            </ol>
+                        </li>
+                        <li><strong>Bundle (R$ 225,00):</strong> 
+                            <ul>
+                                <li>9 Play Boosters (totalizando 126 cartas conforme a estrutura acima)</li>
+                                <li>3 cartas aleatórias de qualquer raridade à escolha do jogador.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Commander Precon (R$ 250,00):</strong> Um deck completo de 100 cartas (Escolha um Commander Precon oficial).</li>
+                        <li><strong>Booster Box (R$ 900,00):</strong>
+                            <ul>
+                                <li>36 Play Boosters (totalizando 504 cartas conforme a estrutura acima)</li>
+                                <li>3 cartas aleatórias de qualquer raridade à escolha do jogador.</li>
+                                <li>1 carta escolhida qualquer (Box Topper).</li>
+                            </ul>
+                        </li>
+                    </ul>
+
                     <p><strong>Art. 8º</strong> – Ao adquirir uma Booster Box, o jogador tem o direito de escolher uma carta específica da coleção correspondente.</p>
 
                     <h3>Capítulo IV: Mercado</h3>
@@ -129,6 +149,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr><td>0. Tarefa Muito Simples</td><td>R$ 2,00</td><td>Beber água, organizar mesa, tarefa rápida</td></tr>
                             <tr><td>I. Tarefas Simples</td><td>R$ 5,00</td><td>Café saudável, levar o lixo</td></tr>
                             <tr><td>II. Tarefa Importante</td><td>R$ 15,00</td><td>Malhar, completar task</td></tr>
                             <tr><td>III. Hábito Prioritário</td><td>R$ 20,00</td><td>Treino longo, estudo</td></tr>
@@ -146,27 +167,47 @@
 
                     <h3>Passo 1 – Escolha o comandante</h3>
                     <p>O comandante será o centro da estratégia e determinará as cores disponíveis. Priorize um que você ache divertido.</p>
+                    <p><em>Exemplo: Lathril, Herdeira de Folha d'Ouro (Golgari - Foco em Elfos e Fichas).</em></p>
 
                     <h3>Passo 2 – Estratégia do deck</h3>
                     <p>Identifique cada palavra-chave ou mecânica presente (ETB, Sacrifica, Marcadores, etc.) e transforme essas palavras em necessidades para o deck.</p>
+                    <p><em>Exemplo: Se o comandante cria fichas ao causar dano, o deck precisa de cartas para torná-lo imbloqueável e cartas que se beneficiam de ter muitas criaturas.</em></p>
 
                     <h3>Passo 3 – Cartas temáticas</h3>
                     <p>Procure cartas que possuam várias sinergias ao mesmo tempo. Quanto mais conexões uma carta possuir, maior será seu valor.</p>
+                    <p><em>Exemplo: Para um deck de Elfos, cartas como "Ezuri, Líder Renegado" protegem suas criaturas e servem como finalizador.</em></p>
+
+                    <h3>Passo 4 – Avalie a qualidade das cartas</h3>
+                    <p>Cartas de alto custo devem ganhar o jogo ou gerar vantagem imediata. Na base da curva (1-3), foque em consistência.</p>
+                    <p><em>Exemplo: "Cratera das Garras de Behemoth" justifica seu custo 8 pois geralmente encerra a partida ao entrar.</em></p>
 
                     <h3>Passo 5 – Compra de cartas</h3>
                     <p>Um deck sem compra de cartas ficará sem recursos. Utilize pelo menos <strong>12 fontes</strong> de compra de cartas.</p>
+                    <p><em>Exemplo: "Estudo Rístico", "Leitura de Ossos" ou "Harmonizar".</em></p>
 
                     <h3>Passo 6 – Ramp (Aceleração)</h3>
                     <p>Inclua aproximadamente <strong>10 a 12 fontes</strong> de ramp. Dê preferência para ramp barato (custo 2 é melhor que 3).</p>
+                    <p><em>Exemplo: "Selo Arcano", "Anel Solar" ou "Alcance de Kodama".</em></p>
 
                     <h3>Passo 7 – Interação</h3>
                     <p>Todo deck precisa responder às ameaças. Procure manter 10 interações e entre 2 e 4 limpezas de mesa.</p>
+                    <p><em>Exemplo: "Espadas em Arados", "Fera Interior" ou "Dilúvio Tóxico".</em></p>
 
                     <h3>Passo 8 – Base de mana</h3>
                     <p>Como ponto de partida: utilize cerca de <strong>38 terrenos</strong>. A base de mana deve oferecer consistência antes de velocidade.</p>
+                    <p><em>Exemplo: "Torre do Comando", "Passagem do Andarilho" e terrenos básicos.</em></p>
+
+                    <h3>Passo 9 – Faça os cortes finais</h3>
+                    <p>Organize por curva de mana e remova redundâncias ou cartas situacionais demais.</p>
+                    <p><em>Exemplo: Se você tem 110 cartas, retire aquela remoção que só atinge criaturas voadoras em favor de uma mais versátil.</em></p>
 
                     <h3>Passo 10 – Condições de vitória</h3>
                     <p>Todo deck precisa de formas claras de vencer. Procure incluir entre 3 e 4 condições de vitória (dano, combo, etc.).</p>
+                    <p><em>Exemplo: Dano de combate massivo, um combo de mana infinita ou dreno de vida passivo.</em></p>
+
+                    <h3>Passo 11 – Teste o deck (Goldfish)</h3>
+                    <p>Simule partidas sozinho até o turno 7 para ver se a curva e a compra de cartas estão funcionando.</p>
+                    <p><em>Exemplo: Verifique se até o turno 4 você conseguiu colocar seu comandante ou desenvolver sua base de mana adequadamente.</em></p>
 
                     <h3>Checklist Final</h3>
                     <ul>

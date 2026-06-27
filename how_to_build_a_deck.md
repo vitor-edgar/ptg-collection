@@ -27,6 +27,8 @@ Depois da escolha, responda às seguintes perguntas:
 
 Essas respostas servirão como base para todo o restante do processo.
 
+> **Exemplo:** Se escolher *Lathril, Herdeira de Folha d'Ouro*, suas respostas seriam: Ela cria elfos e drena vida; gera vantagem através de fichas; pretende vencer por dano massivo ou dreno; precisa de muitos elfos e formas de conectar dano.
+
 ---
 
 ## Passo 2 – Descubra a estratégia do deck
@@ -75,6 +77,8 @@ Se utiliza o cemitério:
 
 Ao final desse processo você terá uma lista de temas centrais que seu deck precisa explorar.
 
+> **Exemplo:** Para um deck que sacrifica criaturas, sua lista de necessidades teria: geradores de tokens (fichas), "outlets" de sacrifício (como *Altar de Ashnod*) e cartas que disparam efeitos quando algo morre (como *Artista do Sangue*).
+
 ---
 
 ## Passo 3 – Escolha as cartas temáticas
@@ -94,6 +98,8 @@ Uma boa carta costuma:
 * gerar valor em diferentes momentos da partida.
 
 Durante essa etapa reúna aproximadamente 40 cartas temáticas.
+
+> **Exemplo:** No deck de *Lathril*, uma carta como *Ezuri, Líder Renegado* é perfeita: é um elfo, protege outros elfos e serve como condição de vitória.
 
 Não se preocupe com o tamanho da lista. Os cortes serão feitos posteriormente.
 
@@ -142,6 +148,8 @@ São elas que:
 
 Na maioria dos casos, quanto menor a curva de mana, mais consistente será o deck.
 
+> **Exemplo:** Uma carta como *Cratera das Garras de Behemoth* (custo 8) justifica sua vaga pois frequentemente vence o jogo no momento em que entra. Uma carta de custo 8 que apenas "ajuda" deve ser cortada.
+
 ---
 
 ## Passo 5 – Adicione compra de cartas
@@ -161,6 +169,8 @@ Prefira uma curva equilibrada:
 * o restante pode custar 4 ou mais, desde que gere uma quantidade muito grande de cartas.
 
 Sempre que possível, escolha compras de cartas que também possuam sinergia com sua estratégia principal.
+
+> **Exemplo:** Em um deck verde, *Harmonizar* é uma compra direta, mas *Guardião do Projeto Beast* pode ser melhor se você tem muitas criaturas grandes, pois gera valor contínuo.
 
 ---
 
@@ -183,6 +193,8 @@ Entretanto, cartas mais caras podem ser utilizadas quando oferecem grande sinerg
 
 Também é interessante possuir algumas formas de aceleração explosiva para os turnos finais, permitindo executar grandes jogadas e finalizar a partida.
 
+> **Exemplo:** *Selo Arcano* e *Anel Solar* são fundamentais. Em decks verdes, *Alcance de Kodama* ajuda a corrigir as cores e garantir terrenos.
+
 ---
 
 ## Passo 7 – Adicione interação
@@ -204,6 +216,8 @@ A interação pode incluir:
 
 Sempre que possível, escolha respostas que também contribuam para a estratégia do deck.
 
+> **Exemplo:** *Fera Interior* é uma resposta versátil para qualquer deck com verde. *Dilúvio Tóxico* é essencial para lidar com mesas cheias.
+
 ---
 
 ## Passo 8 – Monte a base de mana
@@ -219,6 +233,8 @@ A distribuição entre terrenos básicos e não básicos dependerá da identidad
 Decks monocoloridos podem utilizar muitos terrenos básicos.
 
 Decks de três, quatro ou cinco cores normalmente exigem uma quantidade maior de terrenos que corrigem cores.
+
+> **Exemplo:** Comece com *Torre do Comando* e terrenos básicos. Adicione terrenos que entram virados apenas se necessário para corrigir as cores.
 
 ---
 
@@ -249,6 +265,8 @@ Quando houver dúvida entre duas cartas semelhantes, escolha aquela que:
 
 Um deck consistente normalmente prefere eficiência e integração ao invés de poder isolado.
 
+> **Exemplo:** Se você precisa cortar 5 cartas, comece por aquelas que custam 5+ manas e não ajudam diretamente a vencer ou aquelas que dependem de uma situação muito específica para serem boas.
+
 ---
 
 ## Passo 10 – Identifique as condições de vitória
@@ -272,6 +290,8 @@ Essas condições podem ser:
 * qualquer outra forma compatível com a estratégia do comandante.
 
 As condições de vitória também devem possuir sinergia com o restante do deck.
+
+> **Exemplo:** Um deck de fichas pode vencer com *Triunfo das Hordas*, enquanto um deck de controle pode vencer com um combo de mana infinita e uma mágica X de dano.
 
 ---
 
@@ -301,6 +321,8 @@ Talvez falte:
 * consistência.
 
 Faça pequenos ajustes e repita o processo diversas vezes.
+
+> **Exemplo:** Se no teste você percebeu que nunca tem mana para baixar o comandante no turno ideal, talvez precise de mais 2 terrenos ou 3 fontes de ramp.
 
 ---
 

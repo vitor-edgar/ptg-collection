@@ -41,16 +41,33 @@ Cartas cujo Valor Funcional seja igual ou superior ao custo de impressão soment
 
 ## Capítulo III: Produtos
 
-### Art. 6º – Tabela de Preços e Conteúdo
-Todos os produtos possuem preços tabelados e conteúdos fixos conforme a tabela abaixo:
+### Art. 6º – Conteúdo Detalhado dos Produtos
+Todos os produtos possuem preços tabelados e conteúdos fixos conforme detalhado abaixo:
 
-| Produto | Valor     | Conteúdo                                                 |
-| :--- |:----------|:---------------------------------------------------------|
-| **Carta Aleatória** | R$ 2,00   | 1 carta                                                  |
-| **Play Booster** | R$ 25,00  | 14 cartas                                                |
-| **Bundle** | R$ 225,00 | 126 cartas (9 Play Boosters + 1 Carta Rara Aleatória)    |
-| **Commander Precon** | R$ 250,00 | 100 cartas                                               |
-| **Booster Box** | R$ 900,00 | 504 cartas (36 Play Boosters + 1 Carta Mítica Aleatória) |
+*   **Carta Aleatória (R$ 2,00):** Uma carta aleatória qualquer, podendo ser filtrada por identidade do comandante.
+*   **Play Booster (R$ 25,00):** Contém 14 cartas com a seguinte estrutura:
+    1. Comum
+    2. Comum
+    3. Comum
+    4. Comum
+    5. Comum
+    6. Comum
+    7. Comum (ou carta da "The List")
+    8. Incomum
+    9. Incomum
+    10. Incomum
+    11. Wildcard (Qualquer raridade: Comum a Mítica)
+    12. Rara ou Mítica do set
+    13. Foil Tradicional (Qualquer raridade)
+    14. Terreno Básico
+*   **Bundle (R$ 225,00):** 
+    *   9 Play Boosters (totalizando 126 cartas conforme a estrutura acima)
+    *   3 cartas aleatórias de qualquer raridade à escolha do jogador.
+*   **Commander Precon (R$ 250,00):** Escolha um Commander Precon oficial (100 cartas).
+*   **Booster Box (R$ 900,00):**
+    *   36 Play Boosters (totalizando 504 cartas conforme a estrutura acima)
+    *   3 cartas aleatórias de qualquer raridade à escolha do jogador.
+    *   1 carta escolhida qualquer (Box Topper).
 
 *Os preços são fixos, proporcionais ao conteúdo e independem da coleção.*
 
@@ -95,6 +112,7 @@ Todo dinheiro utilizado dentro do sistema deverá ser obtido exclusivamente atra
 
 | Categoria | Valor    | Exemplos                                                          |
 | :--- |:---------|:------------------------------------------------------------------|
+| **0. Tarefas Muito Simples** | R$ 2,00  | Lavar prato, organizar mesa, tarefa rápida.                       |
 | **I. Tarefas Simples (Comuns)** | R$ 5,00  | Café saudável, levar o lixo, pequenas tarefas rápidas.            |
 | **II. Tarefa Importante (Incomum)** | R$ 15,00 | Completar task, malhar, obrigações ou tarefas importantes do dia. |
 | **III. Hábitos Prioritários (Raros)** | R$ 20,00 | Malhar no fim de semana, 1h passeio com o cachorro.               |
