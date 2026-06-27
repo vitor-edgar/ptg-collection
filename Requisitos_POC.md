@@ -15,18 +15,18 @@ Criar uma ferramenta minimalista e rápida para que o usuário possa registrar c
 
 ### RF02 – Registro de Créditos (Ganhos)
 *   **Entrada Manual:** O sistema deve oferecer um campo para inserção manual de valor.
-*   **Atalhos de Categorias:** Exibir botões de ação rápida para adicionar valores fixos baseados em raridade (R$ 5, 15, 20, 50).
-*   **Menu de Atividades (NOVO):** Permitir a seleção de tarefas específicas (ex: "Malhar", "Estudar") que aplicam o bônus automaticamente conforme a categoria.
+*   **Atalhos Rápidos:** Exibir botões de ação rápida (+0,5, +1, +2, +5, +10, +20, +50, +100).
+*   **Nome da Atividade:** Sempre que um crédito for inserido, o sistema deve solicitar o nome da atividade realizada.
 
 ### RF03 – Registro de Despesas (Gastos)
 *   **Entrada Manual:** O sistema deve oferecer um campo para inserção manual de valor.
-*   **Atalhos de Produtos (Art. 6º):** Exibir botões de ação rápida para deduzir valores fixos.
+*   **Atalhos de Produtos (Art. 6º):** Exibir botões de ação rápida para deduzir valores fixos, informando também a quantidade de cartas que o produto rende.
 
-### RF04 – Página do Regulamento (NOVO)
-*   O sistema deve possuir uma aba ou tela dedicada para exibir as regras do sistema (conteúdo do `Regulamento.md`).
+### RF04 – Histórico de Transações (NOVO)
+*   O sistema deve possuir uma aba dedicada para exibir todas as operações (créditos e débitos) realizadas, com data, nome e valor.
 
-### RF05 – Navegação (NOVO)
-*   Interface com navegação simples (ex: abas no rodapé ou cabeçalho) para alternar entre "Saldo" e "Regulamento".
+### RF05 – Navegação
+*   Interface com abas para alternar entre "Saldo" e "Histórico".
 
 ---
 
@@ -37,7 +37,7 @@ Criar uma ferramenta minimalista e rápida para que o usuário possa registrar c
 *   Deve possuir `manifest.json` e Service Worker básico.
 
 ### RNF02 – Armazenamento de Dados
-*   O saldo deve ser persistido no **LocalStorage** do navegador para que não se perca ao fechar o app.
+*   O saldo e o histórico de transações devem ser persistidos no **LocalStorage** do navegador.
 
 ### RNF03 – Interface (UI/UX)
 *   Interface "Clean" e minimalista.
@@ -48,4 +48,4 @@ Criar uma ferramenta minimalista e rápida para que o usuário possa registrar c
 
 ## 4. Regras de Negócio (RN)
 *   **RN01:** O saldo deve ser impedido de ficar negativo, ou o sistema deve exibir um aviso visual crítico caso isso ocorra.
-*   **RN02:** Simplicidade total: sem telas de login, sem bancos de dados externos e sem listagem de transações passadas.
+*   **RN02:** Simplicidade total: sem telas de login e sem bancos de dados externos.

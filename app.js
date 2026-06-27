@@ -1,5 +1,9 @@
 // State management
 let balance = parseFloat(localStorage.getItem('ptg_balance')) || 0;
+let transactions = JSON.parse(localStorage.getItem('ptg_transactions')) || [];
+
+// Pending transaction for modal
+let pendingAmount = 0;
 
 // DOM Elements
 const balanceEl = document.getElementById('balance');
@@ -12,26 +16,27 @@ const notification = document.getElementById('notification');
 const shortcuts = document.querySelectorAll('.shortcut');
 const tabBtns = document.querySelectorAll('.tab-btn');
 const views = document.querySelectorAll('.view');
-const activitySelect = document.getElementById('activity-select');
-const addActivityBtn = document.getElementById('add-activity-btn');
-const rulesText = document.getElementById('rules-text');
+const historyList = document.getElementById('history-list');
+
+// Modal Elements
+const activityModal = document.getElementById('activity-modal');
+const activityNameInput = document.getElementById('activity-name-input');
+const confirmActivityBtn = document.getElementById('confirm-activity-btn');
+const cancelActivityBtn = document.getElementById('cancel-activity-btn');
 
 // Initialize
 updateUI();
-loadRules();
+updateHistoryUI();
 
 // Functions
 function updateUI() {
-    // Format balance as R$
     balanceEl.textContent = new Intl.NumberFormat('pt-BR', {
         style: 'currency',
         currency: 'BRL'
     }).format(balance);
 
-    // Persist
     localStorage.setItem('ptg_balance', balance.toString());
 
-    // Negative balance check
     if (balance < 0) {
         balanceContainer.classList.add('negative');
         notification.classList.remove('hidden');
@@ -41,58 +46,92 @@ function updateUI() {
     }
 }
 
-async function loadRules() {
-    try {
-        const response = await fetch('Regulamento.md');
-        const text = await response.text();
-        rulesText.textContent = text;
-    } catch (error) {
-        rulesText.textContent = "Erro ao carregar o regulamento.";
+function updateHistoryUI() {
+    if (!historyList) return;
+    
+    if (transactions.length === 0) {
+        historyList.innerHTML = '<p class="empty-msg">Nenhuma transação registrada.</p>';
+        return;
     }
+
+    historyList.innerHTML = transactions.slice().reverse().map(t => `
+        <div class="history-item ${t.type}">
+            <div class="history-info">
+                <span class="history-name">${t.name}</span>
+                <span class="history-date">${t.date}</span>
+            </div>
+            <span class="history-amount ${t.type}">
+                ${t.type === 'credit' ? '+' : '-'} ${new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                }).format(t.amount)}
+            </span>
+        </div>
+    `).join('');
 }
 
-function addAmount(amount) {
-    if (isNaN(amount) || amount === 0) return;
-    balance += amount;
+function recordTransaction(type, amount, name) {
+    const date = new Date().toLocaleString('pt-BR');
+    transactions.push({ type, amount, name, date });
+    
+    if (type === 'credit') {
+        balance += amount;
+    } else {
+        balance -= amount;
+    }
+    
+    localStorage.setItem('ptg_transactions', JSON.stringify(transactions));
     updateUI();
+    updateHistoryUI();
+}
+
+function openActivityModal(amount) {
+    pendingAmount = amount;
+    activityModal.classList.remove('hidden');
+    activityNameInput.value = '';
+    setTimeout(() => activityNameInput.focus(), 100);
+}
+
+function closeActivityModal() {
+    activityModal.classList.add('hidden');
+    pendingAmount = 0;
 }
 
 // Event Listeners
 addCreditBtn.addEventListener('click', () => {
     const val = parseFloat(creditInput.value);
-    if (!isNaN(val)) {
-        addAmount(val);
+    if (!isNaN(val) && val > 0) {
+        openActivityModal(val);
         creditInput.value = '';
     }
 });
 
 addDebitBtn.addEventListener('click', () => {
     const val = parseFloat(debitInput.value);
-    if (!isNaN(val)) {
-        addAmount(-val);
+    if (!isNaN(val) && val > 0) {
+        recordTransaction('debit', val, 'Gasto Manual');
         debitInput.value = '';
     }
 });
 
-// Activity Menu
-addActivityBtn.addEventListener('click', () => {
-    const val = parseFloat(activitySelect.value);
-    if (!isNaN(val)) {
-        addAmount(val);
-        activitySelect.selectedIndex = 0;
-    }
+confirmActivityBtn.addEventListener('click', () => {
+    const name = activityNameInput.value.trim() || 'Crédito';
+    recordTransaction('credit', pendingAmount, name);
+    closeActivityModal();
+});
+
+cancelActivityBtn.addEventListener('click', closeActivityModal);
+
+activityNameInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') confirmActivityBtn.click();
 });
 
 // Navigation
 tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         const target = btn.dataset.target;
-        
-        // Update buttons
         tabBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        
-        // Update views
         views.forEach(v => {
             if (v.id === target) {
                 v.classList.remove('hidden');
@@ -107,14 +146,14 @@ shortcuts.forEach(btn => {
     btn.addEventListener('click', () => {
         const val = parseFloat(btn.dataset.value);
         if (btn.classList.contains('credit')) {
-            addAmount(val);
+            openActivityModal(val);
         } else {
-            addAmount(-val);
+            const itemName = btn.querySelector('span')?.textContent || 'Gasto';
+            recordTransaction('debit', val, itemName);
         }
     });
 });
 
-// Handle Enter key on inputs
 creditInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') addCreditBtn.click();
 });

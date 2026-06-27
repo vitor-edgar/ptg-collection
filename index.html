@@ -16,7 +16,7 @@
             <h1>PTG Balance</h1>
             <nav class="tabs">
                 <button class="tab-btn active" data-target="tracker-view">Saldo</button>
-                <button class="tab-btn" data-target="rules-view">Regulamento</button>
+                <button class="tab-btn" data-target="history-view">Histórico</button>
             </nav>
         </header>
 
@@ -31,41 +31,19 @@
                 <section class="action-section">
                     <h2>Ganhos (Créditos)</h2>
                     <div class="input-group">
-                        <select id="activity-select">
-                            <option value="" disabled selected>Selecionar Atividade...</option>
-                            <optgroup label="Comum (R$ 5)">
-                                <option value="5">☕ Café saudável</option>
-                                <option value="5">🗑️ Levar o lixo</option>
-                                <option value="5">⚡ Pequena tarefa rápida</option>
-                            </optgroup>
-                            <optgroup label="Incomum (R$ 15)">
-                                <option value="15">✅ Completar task</option>
-                                <option value="15">💪 Malhar</option>
-                                <option value="15">📅 Obrigação importante</option>
-                            </optgroup>
-                            <optgroup label="Raro (R$ 20)">
-                                <option value="20">🏋️ Malhar (FDS)</option>
-                                <option value="20">🐕 Passeio cachorro (1h)</option>
-                            </optgroup>
-                            <optgroup label="Mítico (R$ 50)">
-                                <option value="50">🚀 Finalizar projeto</option>
-                                <option value="50">🏠 Organizar a casa</option>
-                                <option value="50">📚 Estudar (horas)</option>
-                            </optgroup>
-                        </select>
-                        <button id="add-activity-btn" class="btn-main credit">Lançar</button>
-                    </div>
-                    
-                    <div class="input-group">
                         <input type="number" id="credit-input" placeholder="Valor manual" step="0.01">
                         <button id="add-credit-btn" class="btn-main credit">Adicionar</button>
                     </div>
                     
                     <div class="grid shortcuts credit-grid">
-                        <button class="shortcut credit" data-value="5"><span>Comum</span><strong>+ R$ 5</strong></button>
-                        <button class="shortcut credit" data-value="15"><span>Incomum</span><strong>+ R$ 15</strong></button>
-                        <button class="shortcut credit" data-value="20"><span>Raro</span><strong>+ R$ 20</strong></button>
-                        <button class="shortcut credit" data-value="50"><span>Mítico</span><strong>+ R$ 50</strong></button>
+                        <button class="shortcut credit" data-value="0.5"><strong>+ R$ 0,5</strong></button>
+                        <button class="shortcut credit" data-value="1"><strong>+ R$ 1</strong></button>
+                        <button class="shortcut credit" data-value="2"><strong>+ R$ 2</strong></button>
+                        <button class="shortcut credit" data-value="5"><strong>+ R$ 5</strong></button>
+                        <button class="shortcut credit" data-value="10"><strong>+ R$ 10</strong></button>
+                        <button class="shortcut credit" data-value="20"><strong>+ R$ 20</strong></button>
+                        <button class="shortcut credit" data-value="50"><strong>+ R$ 50</strong></button>
+                        <button class="shortcut credit" data-value="100"><strong>+ R$ 100</strong></button>
                     </div>
                 </section>
 
@@ -78,23 +56,38 @@
                         <button id="add-debit-btn" class="btn-main debit">Deduzir</button>
                     </div>
                     <div class="grid shortcuts debit-grid">
-                        <button class="shortcut debit" data-value="2"><span>Carta</span><strong>- R$ 2</strong></button>
-                        <button class="shortcut debit" data-value="25"><span>Play Booster</span><strong>- R$ 25</strong></button>
-                        <button class="shortcut debit" data-value="225"><span>Bundle</span><strong>- R$ 225</strong></button>
-                        <button class="shortcut debit" data-value="250"><span>Precon</span><strong>- R$ 250</strong></button>
-                        <button class="shortcut debit" data-value="900"><span>Booster Box</span><strong>- R$ 900</strong></button>
+                        <button class="shortcut debit" data-value="2"><span>Carta</span><strong>- R$ 2</strong><small>1 carta</small></button>
+                        <button class="shortcut debit" data-value="25"><span>Play Booster</span><strong>- R$ 25</strong><small>14 cartas</small></button>
+                        <button class="shortcut debit" data-value="225"><span>Bundle</span><strong>- R$ 225</strong><small>126 cartas</small></button>
+                        <button class="shortcut debit" data-value="250"><span>Precon</span><strong>- R$ 250</strong><small>100 cartas</small></button>
+                        <button class="shortcut debit" data-value="900"><span>Booster Box</span><strong>- R$ 900</strong><small>504 cartas</small></button>
                     </div>
                 </section>
             </div>
 
-            <!-- Rules View -->
-            <div id="rules-view" class="view hidden">
-                <div class="rules-content">
-                    <h2>Regulamento: PTG Collection</h2>
-                    <div id="rules-text">Carregando...</div>
+            <!-- History View -->
+            <div id="history-view" class="view hidden">
+                <div class="history-content">
+                    <h2>Histórico</h2>
+                    <div id="history-list">
+                        <!-- Transações serão inseridas aqui -->
+                        <p class="empty-msg">Nenhuma transação registrada.</p>
+                    </div>
                 </div>
             </div>
         </main>
+
+        <!-- Activity Name Modal -->
+        <div id="activity-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Nome da Atividade</h3>
+                <input type="text" id="activity-name-input" placeholder="Ex: Café, Malhar, Task...">
+                <div class="modal-actions">
+                    <button id="cancel-activity-btn" class="btn-secondary">Cancelar</button>
+                    <button id="confirm-activity-btn" class="btn-main credit">Confirmar</button>
+                </div>
+            </div>
+        </div>
 
         <div id="notification" class="hidden">Saldo Negativo!</div>
     </div>
