@@ -10,9 +10,15 @@ const addCreditBtn = document.getElementById('add-credit-btn');
 const addDebitBtn = document.getElementById('add-debit-btn');
 const notification = document.getElementById('notification');
 const shortcuts = document.querySelectorAll('.shortcut');
+const tabBtns = document.querySelectorAll('.tab-btn');
+const views = document.querySelectorAll('.view');
+const activitySelect = document.getElementById('activity-select');
+const addActivityBtn = document.getElementById('add-activity-btn');
+const rulesText = document.getElementById('rules-text');
 
 // Initialize
 updateUI();
+loadRules();
 
 // Functions
 function updateUI() {
@@ -32,6 +38,16 @@ function updateUI() {
     } else {
         balanceContainer.classList.remove('negative');
         notification.classList.add('hidden');
+    }
+}
+
+async function loadRules() {
+    try {
+        const response = await fetch('Regulamento.md');
+        const text = await response.text();
+        rulesText.textContent = text;
+    } catch (error) {
+        rulesText.textContent = "Erro ao carregar o regulamento.";
     }
 }
 
@@ -56,6 +72,35 @@ addDebitBtn.addEventListener('click', () => {
         addAmount(-val);
         debitInput.value = '';
     }
+});
+
+// Activity Menu
+addActivityBtn.addEventListener('click', () => {
+    const val = parseFloat(activitySelect.value);
+    if (!isNaN(val)) {
+        addAmount(val);
+        activitySelect.selectedIndex = 0;
+    }
+});
+
+// Navigation
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const target = btn.dataset.target;
+        
+        // Update buttons
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Update views
+        views.forEach(v => {
+            if (v.id === target) {
+                v.classList.remove('hidden');
+            } else {
+                v.classList.add('hidden');
+            }
+        });
+    });
 });
 
 shortcuts.forEach(btn => {

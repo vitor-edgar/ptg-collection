@@ -15,20 +15,18 @@ Criar uma ferramenta minimalista e rápida para que o usuário possa registrar c
 
 ### RF02 – Registro de Créditos (Ganhos)
 *   **Entrada Manual:** O sistema deve oferecer um campo para inserção manual de valor.
-*   **Atalhos de Tarefas (Art. 15º):** Exibir botões de ação rápida para adicionar valores fixos:
-    *   **Comum:** + R$ 5,00
-    *   **Incomum:** + R$ 15,00
-    *   **Raro:** + R$ 20,00
-    *   **Mítico:** + R$ 50,00
+*   **Atalhos de Categorias:** Exibir botões de ação rápida para adicionar valores fixos baseados em raridade (R$ 5, 15, 20, 50).
+*   **Menu de Atividades (NOVO):** Permitir a seleção de tarefas específicas (ex: "Malhar", "Estudar") que aplicam o bônus automaticamente conforme a categoria.
 
 ### RF03 – Registro de Despesas (Gastos)
 *   **Entrada Manual:** O sistema deve oferecer um campo para inserção manual de valor.
-*   **Atalhos de Produtos (Art. 6º):** Exibir botões de ação rápida para deduzir valores fixos:
-    *   **Carta:** - R$ 2,00
-    *   **Play Booster:** - R$ 25,00
-    *   **Bundle:** - R$ 225,00
-    *   **Precon:** - R$ 250,00
-    *   **Booster Box:** - R$ 900,00
+*   **Atalhos de Produtos (Art. 6º):** Exibir botões de ação rápida para deduzir valores fixos.
+
+### RF04 – Página do Regulamento (NOVO)
+*   O sistema deve possuir uma aba ou tela dedicada para exibir as regras do sistema (conteúdo do `Regulamento.md`).
+
+### RF05 – Navegação (NOVO)
+*   Interface com navegação simples (ex: abas no rodapé ou cabeçalho) para alternar entre "Saldo" e "Regulamento".
 
 ---
 
