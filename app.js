@@ -104,7 +104,10 @@ function openActivityModal(amount, defaultName = '') {
     pendingAmount = amount;
     activityModal.classList.remove('hidden');
     activityNameInput.value = defaultName;
-    setTimeout(() => activityNameInput.focus(), 100);
+    setTimeout(() => {
+        activityNameInput.focus();
+        activityNameInput.select();
+    }, 100);
 }
 
 function closeActivityModal() {
