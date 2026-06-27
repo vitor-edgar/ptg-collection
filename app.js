@@ -13,6 +13,12 @@ transactions = transactions.map((t, i) => {
 });
 if (migrated) localStorage.setItem('ptg_transactions', JSON.stringify(transactions));
 
+// Limit history to 10 items to save space and consolidate old balance
+if (transactions.length > 10) {
+    transactions = transactions.slice(-10);
+    localStorage.setItem('ptg_transactions', JSON.stringify(transactions));
+}
+
 // Pending transaction for modal
 let pendingAmount = 0;
 
@@ -87,12 +93,18 @@ function updateHistoryUI() {
 function recordTransaction(type, amount, name) {
     const date = new Date().toLocaleString('pt-BR');
     const id = Date.now();
-    transactions.push({ id, type, amount, name, date });
     
     if (type === 'credit') {
         balance += amount;
     } else {
         balance -= amount;
+    }
+
+    transactions.push({ id, type, amount, name, date });
+    
+    // Keep only last 10 transactions
+    if (transactions.length > 10) {
+        transactions.shift();
     }
     
     localStorage.setItem('ptg_transactions', JSON.stringify(transactions));

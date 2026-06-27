@@ -50,3 +50,4 @@ Criar uma ferramenta minimalista e rápida para que o usuário possa registrar c
 ## 4. Regras de Negócio (RN)
 *   **RN01:** O saldo deve ser impedido de ficar negativo, ou o sistema deve exibir um aviso visual crítico caso isso ocorra.
 *   **RN02:** Simplicidade total: sem telas de login e sem bancos de dados externos.
+*   **RN03:** O histórico deve listar apenas as últimas 10 operações. Transações excedentes são consolidadas no saldo e removidas da listagem, não podendo ser desfeitas.
