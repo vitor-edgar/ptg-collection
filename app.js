@@ -85,10 +85,10 @@ function recordTransaction(type, amount, name) {
     updateHistoryUI();
 }
 
-function openActivityModal(amount) {
+function openActivityModal(amount, defaultName = '') {
     pendingAmount = amount;
     activityModal.classList.remove('hidden');
-    activityNameInput.value = '';
+    activityNameInput.value = defaultName;
     setTimeout(() => activityNameInput.focus(), 100);
 }
 
@@ -146,7 +146,8 @@ shortcuts.forEach(btn => {
     btn.addEventListener('click', () => {
         const val = parseFloat(btn.dataset.value);
         if (btn.classList.contains('credit')) {
-            openActivityModal(val);
+            const defaultName = btn.querySelector('span')?.textContent || '';
+            openActivityModal(val, defaultName);
         } else {
             const itemName = btn.querySelector('span')?.textContent || 'Gasto';
             recordTransaction('debit', val, itemName);

@@ -15,7 +15,7 @@ Criar uma ferramenta minimalista e rápida para que o usuário possa registrar c
 
 ### RF02 – Registro de Créditos (Ganhos)
 *   **Entrada Manual:** O sistema deve oferecer um campo para inserção manual de valor.
-*   **Atalhos Rápidos:** Exibir botões de ação rápida (+0,5, +1, +2, +5, +10, +20, +50, +100).
+*   **Atalhos Rápidos:** Exibir botões de ação rápida baseados em tarefas (Muito Simples R$2, Simples R$5, Importante R$15, Prioritário R$20, Grandes Conquistas R$50).
 *   **Nome da Atividade:** Sempre que um crédito for inserido, o sistema deve solicitar o nome da atividade realizada.
 
 ### RF03 – Registro de Despesas (Gastos)
