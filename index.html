@@ -17,6 +17,8 @@
             <nav class="tabs">
                 <button class="tab-btn active" data-target="tracker-view">Saldo</button>
                 <button class="tab-btn" data-target="history-view">Histórico</button>
+                <button class="tab-btn" data-target="regulations-view">Regras</button>
+                <button class="tab-btn" data-target="deck-guide-view">Montar Deck</button>
             </nav>
         </header>
 
@@ -70,6 +72,111 @@
                         <!-- Transações serão inseridas aqui -->
                         <p class="empty-msg">Nenhuma transação registrada.</p>
                     </div>
+                </div>
+            </div>
+
+            <!-- Regulations View -->
+            <div id="regulations-view" class="view hidden">
+                <div class="info-content">
+                    <h2>Regulamento: PTG Collection</h2>
+                    
+                    <h3>Preâmbulo</h3>
+                    <p>O <strong>Proxy The Gathering Collection (PTG Collection)</strong> é um sistema de progressão pessoal que transforma bons hábitos em progresso dentro de uma coleção de Magic.</p>
+                    <p>O objetivo é reproduzir a sensação de abrir boosters, construir uma coleção e montar decks sem perder o sentimento de conquista, mesmo utilizando proxies. Neste sistema, a impressora não é uma forma de obter qualquer carta livremente; ela é apenas o meio físico de materializar aquilo que já foi conquistado.</p>
+                    <blockquote>"Os decks são temporários. A Biblioteca é permanente."</blockquote>
+
+                    <h3>Capítulo I: A Biblioteca</h3>
+                    <p><strong>Art. 1º</strong> – O jogador possui uma única Biblioteca. Toda carta conquistada passa a fazer parte permanentemente dela.</p>
+                    <p><strong>Art. 2º</strong> – O jogador somente poderá utilizar simultaneamente a quantidade de cópias que possuir em sua Biblioteca.</p>
+                    <p><strong>Art. 3º</strong> – Ao desmontar um deck, todas as cartas retornam automaticamente à Biblioteca.</p>
+
+                    <h3>Capítulo II: Impressão de Cartas</h3>
+                    <p><strong>Art. 4º</strong> – Cartas cujo Valor Funcional seja inferior ao custo de impressão (R$ 0,50) podem ser impressas livremente.</p>
+                    <p><strong>Art. 5º</strong> – Cartas de valor superior somente poderão ser impressas caso tenham sido abertas em produtos, compradas ou obtidas através de troca.</p>
+
+                    <h3>Capítulo III: Produtos</h3>
+                    <p><strong>Art. 6º</strong> – Tabela de Preços e Conteúdo:</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Valor</th>
+                                <th>Conteúdo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Carta Aleatória</td><td>R$ 2,00</td><td>1 carta</td></tr>
+                            <tr><td>Play Booster</td><td>R$ 25,00</td><td>14 cartas</td></tr>
+                            <tr><td>Bundle</td><td>R$ 225,00</td><td>126 cartas</td></tr>
+                            <tr><td>Commander Precon</td><td>R$ 250,00</td><td>100 cartas</td></tr>
+                            <tr><td>Booster Box</td><td>R$ 900,00</td><td>504 cartas</td></tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Art. 8º</strong> – Ao adquirir uma Booster Box, o jogador tem o direito de escolher uma carta específica da coleção correspondente.</p>
+
+                    <h3>Capítulo IV: Mercado</h3>
+                    <p><strong>Art. 10º</strong> – O Valor Funcional corresponde ao menor preço entre todas as versões oficiais existentes daquela carta.</p>
+                    <p><strong>Art. 11º</strong> – Ao vender uma carta, o jogador recebe exclusivamente seu Valor Funcional.</p>
+
+                    <h3>Capítulo VI: Economia</h3>
+                    <p><strong>Art. 14º</strong> – Todo dinheiro utilizado no sistema deve ser obtido através de tarefas e objetivos pessoais.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Categoria</th>
+                                <th>Valor</th>
+                                <th>Exemplos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>I. Tarefas Simples</td><td>R$ 5,00</td><td>Café saudável, levar o lixo</td></tr>
+                            <tr><td>II. Tarefa Importante</td><td>R$ 15,00</td><td>Malhar, completar task</td></tr>
+                            <tr><td>III. Hábito Prioritário</td><td>R$ 20,00</td><td>Treino longo, estudo</td></tr>
+                            <tr><td>IV. Grande Conquista</td><td>R$ 50,00</td><td>Finalizar projeto</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Deck Guide View -->
+            <div id="deck-guide-view" class="view hidden">
+                <div class="info-content">
+                    <h2>Guia: Montar um Deck Commander</h2>
+                    <p>Montar um bom deck não consiste em reunir cartas fortes aleatoriamente. Um deck consistente é construído em torno de um plano de jogo claro.</p>
+
+                    <h3>Passo 1 – Escolha o comandante</h3>
+                    <p>O comandante será o centro da estratégia e determinará as cores disponíveis. Priorize um que você ache divertido.</p>
+
+                    <h3>Passo 2 – Estratégia do deck</h3>
+                    <p>Identifique cada palavra-chave ou mecânica presente (ETB, Sacrifica, Marcadores, etc.) e transforme essas palavras em necessidades para o deck.</p>
+
+                    <h3>Passo 3 – Cartas temáticas</h3>
+                    <p>Procure cartas que possuam várias sinergias ao mesmo tempo. Quanto mais conexões uma carta possuir, maior será seu valor.</p>
+
+                    <h3>Passo 5 – Compra de cartas</h3>
+                    <p>Um deck sem compra de cartas ficará sem recursos. Utilize pelo menos <strong>12 fontes</strong> de compra de cartas.</p>
+
+                    <h3>Passo 6 – Ramp (Aceleração)</h3>
+                    <p>Inclua aproximadamente <strong>10 a 12 fontes</strong> de ramp. Dê preferência para ramp barato (custo 2 é melhor que 3).</p>
+
+                    <h3>Passo 7 – Interação</h3>
+                    <p>Todo deck precisa responder às ameaças. Procure manter 10 interações e entre 2 e 4 limpezas de mesa.</p>
+
+                    <h3>Passo 8 – Base de mana</h3>
+                    <p>Como ponto de partida: utilize cerca de <strong>38 terrenos</strong>. A base de mana deve oferecer consistência antes de velocidade.</p>
+
+                    <h3>Passo 10 – Condições de vitória</h3>
+                    <p>Todo deck precisa de formas claras de vencer. Procure incluir entre 3 e 4 condições de vitória (dano, combo, etc.).</p>
+
+                    <h3>Checklist Final</h3>
+                    <ul>
+                        <li>[ ] O comandante possui um plano de jogo claro.</li>
+                        <li>[ ] A curva de mana está equilibrada.</li>
+                        <li>[ ] Há aproximadamente 38 terrenos.</li>
+                        <li>[ ] Há entre 10 e 12 ramp.</li>
+                        <li>[ ] Há pelo menos 12 compras de cartas.</li>
+                        <li>[ ] Há cerca de 10 interações.</li>
+                    </ul>
                 </div>
             </div>
         </main>

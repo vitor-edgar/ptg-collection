@@ -47,12 +47,15 @@ h1 {
 .tabs {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 5px;
 }
 
 .tab-btn {
-    padding: 8px 16px;
+    padding: 8px 12px;
     border: none;
     background: #e0e6ed;
     border-radius: 20px;
@@ -60,6 +63,8 @@ h1 {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
+    white-space: nowrap;
+    font-size: 0.85rem;
 }
 
 .tab-btn.active {
@@ -284,6 +289,66 @@ hr {
 
 .hidden {
     display: none !important;
+}
+
+/* Info Views (Regulamento e Guia) */
+.info-content {
+    text-align: left;
+    line-height: 1.6;
+}
+
+.info-content h2 {
+    margin: 25px 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 1.3rem;
+}
+
+.info-content h3 {
+    margin: 20px 0 10px 0;
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+.info-content p {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.info-content ul, .info-content ol {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.info-content li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.info-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+}
+
+.info-content th, .info-content td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.info-content th {
+    background-color: #f8f9fa;
+    color: var(--primary);
+}
+
+.info-content blockquote {
+    border-left: 4px solid #ddd;
+    padding-left: 15px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #666;
 }
 
 /* Modal */
