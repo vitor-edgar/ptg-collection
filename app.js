@@ -172,12 +172,42 @@ activityNameInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') confirmActivityBtn.click();
 });
 
-// Navigation
+// Navigation and Content Loading
+const loadedViews = {
+    'regulations-view': false,
+    'deck-guide-view': false
+};
+
+const viewFiles = {
+    'regulations-view': { file: 'regulamento.html', container: 'regulations-content' },
+    'deck-guide-view': { file: 'how_to_build_a_deck.html', container: 'deck-guide-content' }
+};
+
+async function loadViewContent(target) {
+    if (viewFiles[target] && !loadedViews[target]) {
+        const { file, container } = viewFiles[target];
+        try {
+            const response = await fetch(file);
+            if (!response.ok) throw new Error(`Erro ao carregar ${file}`);
+            const html = await response.text();
+            document.getElementById(container).innerHTML = html;
+            loadedViews[target] = true;
+        } catch (error) {
+            console.error(error);
+            document.getElementById(container).innerHTML = `<p class="error-msg">Erro ao carregar conteúdo: ${error.message}</p>`;
+        }
+    }
+}
+
 tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         const target = btn.dataset.target;
         tabBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+        
+        // Load content if needed
+        loadViewContent(target);
+
         views.forEach(v => {
             if (v.id === target) {
                 v.classList.remove('hidden');
