@@ -1,6 +1,8 @@
 // State management
 let balance = parseFloat(localStorage.getItem('ptg_balance')) || 0;
 let transactions = JSON.parse(localStorage.getItem('ptg_transactions')) || [];
+let tasks = JSON.parse(localStorage.getItem('ptg_tasks')) || [];
+let tasksHistory = JSON.parse(localStorage.getItem('ptg_tasks_history')) || [];
 
 // Migrate existing transactions to have IDs if they don't
 let migrated = false;
@@ -35,6 +37,13 @@ const tabBtns = document.querySelectorAll('.tab-btn');
 const views = document.querySelectorAll('.view');
 const historyList = document.getElementById('history-list');
 
+// Task Elements
+const tasksList = document.getElementById('tasks-list');
+const tasksHistoryList = document.getElementById('tasks-history-list');
+const taskNameInput = document.getElementById('task-name-input');
+const taskCategorySelect = document.getElementById('task-category-select');
+const addTaskBtn = document.getElementById('add-task-btn');
+
 // Modal Elements
 const activityModal = document.getElementById('activity-modal');
 const activityNameInput = document.getElementById('activity-name-input');
@@ -44,6 +53,7 @@ const cancelActivityBtn = document.getElementById('cancel-activity-btn');
 // Initialize
 updateUI();
 updateHistoryUI();
+updateTasksUI();
 
 // Functions
 function updateUI() {
@@ -143,6 +153,108 @@ function deleteTransaction(id) {
     }
 }
 
+// Task Functions
+function updateTasksUI() {
+    if (!tasksList || !tasksHistoryList) return;
+
+    // Render Pending Tasks
+    if (tasks.length === 0) {
+        tasksList.innerHTML = '<p class="empty-msg">Nenhuma tarefa pendente.</p>';
+    } else {
+        tasksList.innerHTML = tasks.map(task => `
+            <div class="task-item">
+                <div class="task-info">
+                    <span class="task-name">${task.name}</span>
+                    <span class="task-category">${getCategoryName(task.value)}</span>
+                </div>
+                <div class="task-actions">
+                    <button class="complete-btn" data-id="${task.id}" title="Concluir">✓</button>
+                    <button class="delete-btn" data-id="${task.id}" data-type="task" title="Excluir">×</button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Render Completed Tasks (limit to 5 for the view)
+    if (tasksHistory.length === 0) {
+        tasksHistoryList.innerHTML = '<p class="empty-msg">Nenhuma tarefa concluída hoje.</p>';
+    } else {
+        tasksHistoryList.innerHTML = tasksHistory.slice().reverse().slice(0, 5).map(task => `
+            <div class="task-item completed">
+                <div class="task-info">
+                    <span class="task-name">${task.name}</span>
+                    <span class="task-category">${getCategoryName(task.value)} - R$ ${task.value}</span>
+                </div>
+                <div class="task-date" style="font-size: 0.7rem; opacity: 0.6;">${task.completedAt}</div>
+            </div>
+        `).join('');
+    }
+}
+
+function getCategoryName(value) {
+    const categories = {
+        '2': '0. Muito Simples',
+        '5': 'I. Simples',
+        '15': 'II. Importante',
+        '20': 'III. Prioritária',
+        '50': 'IV. Suprema'
+    };
+    return categories[value] || 'Geral';
+}
+
+function addTask() {
+    const name = taskNameInput.value.trim();
+    const value = parseFloat(taskCategorySelect.value);
+
+    if (name) {
+        const newTask = {
+            id: Date.now(),
+            name: name,
+            value: value,
+            createdAt: new Date().toLocaleString('pt-BR')
+        };
+        tasks.push(newTask);
+        saveTasks();
+        taskNameInput.value = '';
+        updateTasksUI();
+    }
+}
+
+function completeTask(id) {
+    const index = tasks.findIndex(t => t.id == id);
+    if (index !== -1) {
+        const task = tasks.splice(index, 1)[0];
+        task.completedAt = new Date().toLocaleString('pt-BR');
+        tasksHistory.push(task);
+        
+        // Record as a transaction
+        recordTransaction('credit', task.value, `Tarefa: ${task.name}`);
+        
+        saveTasks();
+        updateTasksUI();
+    }
+}
+
+function deleteTask(id, type = 'pending') {
+    if (type === 'task') {
+        const index = tasks.findIndex(t => t.id == id);
+        if (index !== -1) {
+            tasks.splice(index, 1);
+            saveTasks();
+            updateTasksUI();
+        }
+    }
+}
+
+function saveTasks() {
+    // Limit tasks history to last 50 items
+    if (tasksHistory.length > 50) {
+        tasksHistory = tasksHistory.slice(-50);
+    }
+    localStorage.setItem('ptg_tasks', JSON.stringify(tasks));
+    localStorage.setItem('ptg_tasks_history', JSON.stringify(tasksHistory));
+}
+
 // Event Listeners
 addCreditBtn.addEventListener('click', () => {
     const val = parseFloat(creditInput.value);
@@ -238,6 +350,30 @@ creditInput.addEventListener('keypress', (e) => {
 debitInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') addDebitBtn.click();
 });
+
+// Task Event Listeners
+if (addTaskBtn) {
+    addTaskBtn.addEventListener('click', addTask);
+}
+
+if (taskNameInput) {
+    taskNameInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') addTask();
+    });
+}
+
+if (tasksList) {
+    tasksList.addEventListener('click', (e) => {
+        const id = e.target.dataset.id;
+        if (e.target.classList.contains('complete-btn')) {
+            completeTask(id);
+        } else if (e.target.classList.contains('delete-btn')) {
+            if (confirm('Deseja excluir esta tarefa?')) {
+                deleteTask(id, 'task');
+            }
+        }
+    });
+}
 
 // History Item Deletion
 historyList.addEventListener('click', (e) => {

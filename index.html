@@ -16,6 +16,7 @@
             <h1>PTG Balance</h1>
             <nav class="tabs">
                 <button class="tab-btn active" data-target="tracker-view">Saldo</button>
+                <button class="tab-btn" data-target="tasks-view">Tarefas</button>
                 <button class="tab-btn" data-target="history-view">Histórico</button>
                 <button class="tab-btn" data-target="regulations-view">Regulamento</button>
                 <button class="tab-btn" data-target="deck-guide-view">Montar Deck</button>
@@ -62,6 +63,36 @@
                         <button class="shortcut debit" data-value="900"><span>Booster Box</span><strong>- R$ 900</strong><small>504 cartas</small></button>
                     </div>
                 </section>
+            </div>
+
+            <!-- Tasks View -->
+            <div id="tasks-view" class="view hidden">
+                <div class="tasks-content">
+                    <h2>Minhas Tarefas</h2>
+                    <div class="add-task-form">
+                        <input type="text" id="task-name-input" placeholder="Nova tarefa...">
+                        <select id="task-category-select">
+                            <option value="2">0. Muito Simples (R$ 2)</option>
+                            <option value="5">I. Simples (R$ 5)</option>
+                            <option value="15">II. Importante (R$ 15)</option>
+                            <option value="20">III. Prioritária (R$ 20)</option>
+                            <option value="50">IV. Suprema (R$ 50)</option>
+                        </select>
+                        <button id="add-task-btn" class="btn-main credit">Adicionar</button>
+                    </div>
+                    
+                    <div id="tasks-list" class="tasks-container">
+                        <!-- Tarefas pendentes -->
+                    </div>
+
+                    <div class="tasks-history-section">
+                        <hr>
+                        <h3>Histórico de Tarefas (Hoje)</h3>
+                        <div id="tasks-history-list" class="tasks-container">
+                            <!-- Tarefas concluídas -->
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- History View -->
