@@ -45,29 +45,28 @@ Cartas cujo Valor Funcional seja igual ou superior ao custo de impressão soment
 Todos os produtos possuem preços tabelados e conteúdos fixos conforme detalhado abaixo:
 
 *   **Carta Aleatória (R$ 2,00):** Uma carta aleatória qualquer, podendo ser filtrada por identidade do comandante.
-*   **Play Booster (R$ 25,00):** Contém 14 cartas com a seguinte estrutura:
-    1. Comum
-    2. Comum
-    3. Comum
-    4. Comum
-    5. Comum
-    6. Comum
-    7. Comum (ou carta da "The List")
-    8. Incomum
-    9. Incomum
-    10. Incomum
-    11. Wildcard (Qualquer raridade: Comum a Mítica)
-    12. Rara ou Mítica do set
-    13. Foil Tradicional (Qualquer raridade)
-    14. Terreno Básico
-*   **Bundle (R$ 225,00):** 
-    *   9 Play Boosters (totalizando 126 cartas conforme a estrutura acima)
-    *   3 cartas aleatórias de qualquer raridade à escolha do jogador.
+*   **Play Booster (R$ 25,00):** Contém 14 cartas:
+    - (6x) Comum
+    - (3x) Incomum
+    - (3x) Raridade Aleatória
+    - (1x) Rara ou Mítica
+    - (1x) Terreno Básico
+*   **Bundle (R$ 225,00):** Contém 9 Play Boosters totalizando 140 cartas:
+    - (54x) Comum
+    - (27x) Incomum
+    - (27x) Raridade Aleatória
+    - (14x) Secret Lair Raridade Aleatória
+    - (9x) Rara ou Mítica
+    - (9x) Terreno Básico
 *   **Commander Precon (R$ 250,00):** Escolha um Commander Precon oficial (100 cartas).
-*   **Booster Box (R$ 900,00):**
-    *   36 Play Boosters (totalizando 504 cartas conforme a estrutura acima)
-    *   3 cartas aleatórias de qualquer raridade à escolha do jogador.
-    *   1 carta escolhida qualquer (Box Topper).
+*   **Booster Box (R$ 900,00):** Contém 36 Play Boosters totalizando 546 cartas:
+    - (216x) Comum
+    - (108x) Incomum
+    - (108x) Raridade Aleatória
+    - (42x) Secret Lair Raridade Aleatória
+    - (36x) Rara ou Mítica
+    - (36x) Terreno Básico
+    - (4x) Qualquer Carta a Escolha
 
 *Os preços são fixos, proporcionais ao conteúdo e independem da coleção.*
 
@@ -88,7 +87,7 @@ Ao comprar uma carta individual, o jogador escolhe exatamente qual edição ofic
 O Valor Funcional corresponde ao menor preço entre todas as versões oficiais existentes daquela carta. Representa apenas sua funcionalidade dentro do jogo.
 
 ### Art. 11º – Venda
-Ao vender uma carta, o jogador recebe exclusivamente seu Valor Funcional. A edição vendida é removida permanentemente da Biblioteca.
+Ao vender uma carta, o jogador recebe exclusivamente o seu Valor Funcional. A edição vendida é removida permanentemente da Biblioteca.
 *   **Exemplo:** Uma versão *Borderless* de R$ 180,00 poderá ser vendida apenas pelo Valor Funcional (o preço da versão mais barata disponível no mercado).
 
 ---
@@ -96,7 +95,7 @@ Ao vender uma carta, o jogador recebe exclusivamente seu Valor Funcional. A edi�
 ## Capítulo V: Artes
 
 ### Art. 12º – Artes oficiais
-Toda edição oficial conquistada passa a integrar permanentemente a Biblioteca.
+Toda a edição oficial conquistada passa a integrar permanentemente a Biblioteca.
 
 ### Art. 13º – Artes personalizadas
 Artes personalizadas podem ser utilizadas livremente, mas não possuem valor econômico, não fazem parte da Biblioteca e não podem ser compradas ou vendidas dentro do sistema.
@@ -110,13 +109,13 @@ Todo dinheiro utilizado dentro do sistema deverá ser obtido exclusivamente atra
 
 ### Art. 15º – Categorias de tarefas
 
-| Categoria | Valor    | Exemplos                                                          |
-| :--- |:---------|:------------------------------------------------------------------|
-| **0. Tarefas Muito Simples** | R$ 2,00  | Lavar prato, organizar mesa, tarefa rápida.                       |
-| **I. Tarefas Simples (Comuns)** | R$ 5,00  | Café saudável, levar o lixo, pequenas tarefas rápidas.            |
-| **II. Tarefa Importante (Incomum)** | R$ 15,00 | Completar task, malhar, obrigações ou tarefas importantes do dia. |
-| **III. Hábitos Prioritários (Raros)** | R$ 20,00 | Malhar no fim de semana, 1h passeio com o cachorro.               |
-| **IV. Grandes Conquistas (Míticas)** | R$ 50,00 | Finalizar projeto, organizar a casa, estudar por horas.           |
+| Categoria                      | Valor    | Exemplos                                                |
+|:-------------------------------|:---------|:--------------------------------------------------------|
+| **0. Tarefas Muito Simples**   | R$ 2,00  | Lavar prato, cortar unha, levar lixo.                   |
+| **I. Tarefas Simples**         | R$ 5,00  | Refeição saudável, pagar contas, limpar jorginho.       |
+| **II. Tarefas Importantes**    | R$ 15,00 | Malhar, passear com a batata, verificar água do carro.  |
+| **III. Tarfefas Prioritárias** | R$ 20,00 | Completar task no trabalho, levar carro no mecânico.    |
+| **IV. Tarefas Supremas**       | R$ 50,00 | Finalizar projeto, organizar a casa, estudar por horas. |
 
 ### Art. 16º – Ritmo da progressão
 A economia foi calibrada para incentivar a consistência a longo prazo:
