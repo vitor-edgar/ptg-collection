@@ -73,20 +73,17 @@ Todos os produtos possuem preços tabelados e conteúdos fixos conforme detalhad
 ### Art. 7º – Abertura de produtos
 Toda carta aberta passa imediatamente a integrar a Biblioteca. Não é permitido escolher cartas, "rerrolar" boosters ou desfazer aberturas. Cada booster aberto faz parte da história da Biblioteca.
 
-### Art. 8º – Box Topper (Carta Especial)
-Ao adquirir uma Booster Box, o jogador tem o direito de escolher **uma carta individual específica** (qualquer raridade) da coleção correspondente para adicionar diretamente à sua Biblioteca como bônus de "materialização".
-
 ---
 
 ## Capítulo IV: Mercado
 
-### Art. 9º – Compra
+### Art. 8º – Compra
 Ao comprar uma carta individual, o jogador escolhe exatamente qual edição oficial deseja adquirir. O valor pago será correspondente ao preço de mercado daquela edição específica.
 
-### Art. 10º – Valor Funcional
+### Art. 9º – Valor Funcional
 O Valor Funcional corresponde ao menor preço entre todas as versões oficiais existentes daquela carta. Representa apenas sua funcionalidade dentro do jogo.
 
-### Art. 11º – Venda
+### Art. 10º – Venda
 Ao vender uma carta, o jogador recebe exclusivamente o seu Valor Funcional. A edição vendida é removida permanentemente da Biblioteca.
 *   **Exemplo:** Uma versão *Borderless* de R$ 180,00 poderá ser vendida apenas pelo Valor Funcional (o preço da versão mais barata disponível no mercado).
 
@@ -94,20 +91,20 @@ Ao vender uma carta, o jogador recebe exclusivamente o seu Valor Funcional. A ed
 
 ## Capítulo V: Artes
 
-### Art. 12º – Artes oficiais
+### Art. 11º – Artes oficiais
 Toda a edição oficial conquistada passa a integrar permanentemente a Biblioteca.
 
-### Art. 13º – Artes personalizadas
+### Art. 12º – Artes personalizadas
 Artes personalizadas podem ser utilizadas livremente, mas não possuem valor econômico, não fazem parte da Biblioteca e não podem ser compradas ou vendidas dentro do sistema.
 
 ---
 
 ## Capítulo VI: Economia
 
-### Art. 14º – Origem do dinheiro
+### Art. 13º – Origem do dinheiro
 Todo dinheiro utilizado dentro do sistema deverá ser obtido exclusivamente através da realização de tarefas, hábitos e objetivos pessoais. O objetivo é recompensar o progresso na vida real.
 
-### Art. 15º – Categorias de tarefas
+### Art. 14º – Categorias de tarefas
 
 | Categoria                      | Valor    | Exemplos                                                |
 |:-------------------------------|:---------|:--------------------------------------------------------|
@@ -117,7 +114,7 @@ Todo dinheiro utilizado dentro do sistema deverá ser obtido exclusivamente atra
 | **III. Tarfefas Prioritárias** | R$ 20,00 | Completar task no trabalho, levar carro no mecânico.    |
 | **IV. Tarefas Supremas**       | R$ 50,00 | Finalizar projeto, organizar a casa, estudar por horas. |
 
-### Art. 16º – Ritmo da progressão
+### Art. 15º – Ritmo da progressão
 A economia foi calibrada para incentivar a consistência a longo prazo:
 *   **Dia excelente (Meta):** ~R$ 45,00 (Garante R$ 1.350,00 em 30 dias).
 *   **Frequência:** 30 dias de consistência impecável permitem a aquisição de uma **Booster Box** e mais um pouco.
@@ -126,10 +123,10 @@ A economia foi calibrada para incentivar a consistência a longo prazo:
 
 ## Capítulo VII: Integridade
 
-### Art. 17º – Honestidade
+### Art. 16º – Honestidade
 O **Proxy The Gathering Collection** é baseado na honestidade do jogador. Toda a decisão deve respeitar o espírito do sistema.
 
-### Art. 18º – Condutas proibidas
+### Art. 17º – Condutas proibidas
 É estritamente proibido:
 *   Adicionar cartas diretamente à Biblioteca sem conquista;
 *   Imprimir cartas não conquistadas (exceto as de baixo valor);
